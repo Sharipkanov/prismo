@@ -1,6 +1,9 @@
 .fw-max-height-percent-100
   max-height: 100%
 
+.fw-min-height-100vh
+  min-height: 100vh
+
 @each $value in '1-1_100'
   $values: str_split('#{$value}', '_')
   $width: nth($values, 2)
@@ -25,7 +28,7 @@
     @media screen and (min-width: $large)
       height: unquote("#{$width}%")
 
-@each $value in 1, 38, 50, 205, 240, 280, 495
+@each $value in 0, 43, 100
   .fw-height-#{$value}
     height: #{$value}px
 

@@ -11,6 +11,31 @@
 @import "visibilities"
 @import "text"
 
+.fw-list-unstyled
+  list-style: none
+
+.fw-outline-none
+  outline: none
+
+.fw-relative
+  position: relative
+
+.fw-absolute
+  position: absolute
+
+  @each $value in 0
+    &.fw-top-#{$value}
+      top: #{$value}px
+
+    &.fw-bottom-#{$value}
+      bottom: #{$value}px
+
+    &.fw-left-#{$value}
+      left: #{$value}px
+
+    &.fw-right-#{$value}
+      right: #{$value}px
+
 .fw-overflow-hidden
   overflow: hidden
 
@@ -39,7 +64,7 @@
     margin-right: 5px
     flex-shrink: 0
 
-@each $value in 100
+@each $value in 70, 100
   .fw-box-proportional-#{$value}
     position: relative
 

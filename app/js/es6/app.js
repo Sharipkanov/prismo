@@ -248,20 +248,35 @@ class YOURAPPNAME {
     const app = new YOURAPPNAME(document);
 
     app.appLoad('loading', function () {
-        console.log('App is loading... Paste your app code here.');
         // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
     });
 
     app.appLoad('dom', function () {
-        console.log('DOM is loaded! Paste your app code here (Pure JS code).');
         // DOM is loaded! Paste your app code here (Pure JS code).
         // Do not use jQuery here cause external libs do not loads here...
 
         app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
+
+        (function() {
+            let map,
+                myIcon;
+
+            DG.then(function () {
+
+                map = DG.map('map', {
+                    center: [59.850578, 30.303804],
+                    zoom: 16
+                });
+
+                map.scrollWheelZoom.disable();
+                map.touchZoom.disable();
+
+                DG.marker([59.850578, 30.303804]).addTo(map);
+            });
+        })();
     });
 
     app.appLoad('full', function (e) {
-        console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
         // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
     });

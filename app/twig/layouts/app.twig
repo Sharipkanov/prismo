@@ -9,18 +9,22 @@
     <!-- Stylesheets -->
     {% include "stylesheets.twig" %}
 </head>
-<body>
-    <!-- Header block -->
-    {% include "header.twig" %}
-    <!-- Header block end -->
+<body class="fw-padding-0 fw-margin-0">
+    <div class="fw-width-1-1 fw-overflow-hidden fw-flex fw-flex-column fw-min-height-100vh">
+        <!-- Header block -->
+        {% include "header.twig" %}
+        <!-- Header block end -->
 
-    <!-- Block content -->
-    {% block content %}{% endblock %}
-    <!-- Block content end -->
+        <!-- Block content -->
+        <div>
+            {% block content %}{% endblock %}
+        </div>
+        <!-- Block content end -->
 
-    <!-- Footer block -->
-    {% include "footer.twig" %}
-    <!-- Footer block end -->
+        <!-- Footer block -->
+        {% include "footer.twig" %}
+        <!-- Footer block end -->
+    </div>
 
     <!-- Scripts -->
     {% include "scripts.twig" %}

@@ -1,0 +1,154 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$clock-blue-name: 'clock-blue'
+$clock-blue-x: 66px
+$clock-blue-y: 0px
+$clock-blue-offset-x: -66px
+$clock-blue-offset-y: 0px
+$clock-blue-width: 61px
+$clock-blue-height: 65px
+$clock-blue-total-width: 175px
+$clock-blue-total-height: 157px
+$clock-blue-image: '../images/sprite.png'
+$clock-blue: (66px, 0px, -66px, 0px, 61px, 65px, 175px, 157px, '../images/sprite.png', 'clock-blue', )
+$cup-blue-name: 'cup-blue'
+$cup-blue-x: 0px
+$cup-blue-y: 0px
+$cup-blue-offset-x: 0px
+$cup-blue-offset-y: 0px
+$cup-blue-width: 66px
+$cup-blue-height: 65px
+$cup-blue-total-width: 175px
+$cup-blue-total-height: 157px
+$cup-blue-image: '../images/sprite.png'
+$cup-blue: (0px, 0px, 0px, 0px, 66px, 65px, 175px, 157px, '../images/sprite.png', 'cup-blue', )
+$facebook-circle-grey-name: 'facebook-circle-grey'
+$facebook-circle-grey-x: 0px
+$facebook-circle-grey-y: 65px
+$facebook-circle-grey-offset-x: 0px
+$facebook-circle-grey-offset-y: -65px
+$facebook-circle-grey-width: 47px
+$facebook-circle-grey-height: 46px
+$facebook-circle-grey-total-width: 175px
+$facebook-circle-grey-total-height: 157px
+$facebook-circle-grey-image: '../images/sprite.png'
+$facebook-circle-grey: (0px, 65px, 0px, -65px, 47px, 46px, 175px, 157px, '../images/sprite.png', 'facebook-circle-grey', )
+$instagram-circle-grey-name: 'instagram-circle-grey'
+$instagram-circle-grey-x: 47px
+$instagram-circle-grey-y: 65px
+$instagram-circle-grey-offset-x: -47px
+$instagram-circle-grey-offset-y: -65px
+$instagram-circle-grey-width: 47px
+$instagram-circle-grey-height: 46px
+$instagram-circle-grey-total-width: 175px
+$instagram-circle-grey-total-height: 157px
+$instagram-circle-grey-image: '../images/sprite.png'
+$instagram-circle-grey: (47px, 65px, -47px, -65px, 47px, 46px, 175px, 157px, '../images/sprite.png', 'instagram-circle-grey', )
+$mark-blue-name: 'mark-blue'
+$mark-blue-x: 127px
+$mark-blue-y: 0px
+$mark-blue-offset-x: -127px
+$mark-blue-offset-y: 0px
+$mark-blue-width: 48px
+$mark-blue-height: 63px
+$mark-blue-total-width: 175px
+$mark-blue-total-height: 157px
+$mark-blue-image: '../images/sprite.png'
+$mark-blue: (127px, 0px, -127px, 0px, 48px, 63px, 175px, 157px, '../images/sprite.png', 'mark-blue', )
+$shopping-cart-name: 'shopping-cart'
+$shopping-cart-x: 140px
+$shopping-cart-y: 65px
+$shopping-cart-offset-x: -140px
+$shopping-cart-offset-y: -65px
+$shopping-cart-width: 29px
+$shopping-cart-height: 21px
+$shopping-cart-total-width: 175px
+$shopping-cart-total-height: 157px
+$shopping-cart-image: '../images/sprite.png'
+$shopping-cart: (140px, 65px, -140px, -65px, 29px, 21px, 175px, 157px, '../images/sprite.png', 'shopping-cart', )
+$twitter-circle-grey-name: 'twitter-circle-grey'
+$twitter-circle-grey-x: 94px
+$twitter-circle-grey-y: 65px
+$twitter-circle-grey-offset-x: -94px
+$twitter-circle-grey-offset-y: -65px
+$twitter-circle-grey-width: 46px
+$twitter-circle-grey-height: 46px
+$twitter-circle-grey-total-width: 175px
+$twitter-circle-grey-total-height: 157px
+$twitter-circle-grey-image: '../images/sprite.png'
+$twitter-circle-grey: (94px, 65px, -94px, -65px, 46px, 46px, 175px, 157px, '../images/sprite.png', 'twitter-circle-grey', )
+$vk-circle-grey-name: 'vk-circle-grey'
+$vk-circle-grey-x: 0px
+$vk-circle-grey-y: 111px
+$vk-circle-grey-offset-x: 0px
+$vk-circle-grey-offset-y: -111px
+$vk-circle-grey-width: 46px
+$vk-circle-grey-height: 46px
+$vk-circle-grey-total-width: 175px
+$vk-circle-grey-total-height: 157px
+$vk-circle-grey-image: '../images/sprite.png'
+$vk-circle-grey: (0px, 111px, 0px, -111px, 46px, 46px, 175px, 157px, '../images/sprite.png', 'vk-circle-grey', )
+$spritesheet-width: 175px
+$spritesheet-height: 157px
+$spritesheet-image: '../images/sprite.png'
+$spritesheet-sprites: ($clock-blue, $cup-blue, $facebook-circle-grey, $instagram-circle-grey, $mark-blue, $shopping-cart, $twitter-circle-grey, $vk-circle-grey, )
+$spritesheet: (175px, 157px, '../images/sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SASS
+//
+// @include sprites($spritesheet-sprites)
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
