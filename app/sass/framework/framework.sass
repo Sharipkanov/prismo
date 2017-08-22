@@ -11,6 +11,9 @@
 @import "visibilities"
 @import "text"
 
+.fw-backface-visibility-hidden
+  backface-visibility: hidden
+
 .fw-list-unstyled
   list-style: none
 
@@ -36,8 +39,18 @@
     &.fw-right-#{$value}
       right: #{$value}px
 
+  &.fw-center-center
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
 .fw-overflow-hidden
   overflow: hidden
+
+.fw-text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
 
 .fw-img-cover
   width: 100%
@@ -53,18 +66,7 @@
 .fw-inline
   display: inline
 
-.fw-check-mark
-  position: relative
-  display: flex
-
-  &::before
-    content: url("../images/icons/icon.check.mark.png")
-    display: block
-    margin-top: 2px
-    margin-right: 5px
-    flex-shrink: 0
-
-@each $value in 70, 100
+@each $value in 50, 100
   .fw-box-proportional-#{$value}
     position: relative
 

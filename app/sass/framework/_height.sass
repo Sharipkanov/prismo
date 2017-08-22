@@ -12,76 +12,12 @@
   .fw-height-#{$widthName}
     height: unquote("#{$width}%")
 
-  .fw-height-#{$widthName}\@xs
-    @media screen and (min-width: $extraSmall)
-      height: unquote("#{$width}%")
-
-  .fw-height-#{$widthName}\@s
-    @media screen and (min-width: $small)
-      height: unquote("#{$width}%")
-
-  .fw-height-#{$widthName}\@m
-    @media screen and (min-width: $medium)
-      height: unquote("#{$width}%")
-
-  .fw-height-#{$widthName}\@l
-    @media screen and (min-width: $large)
-      height: unquote("#{$width}%")
-
-@each $value in 0, 43, 100
+@each $value in 0, 1, 15, 28, 43, 80, 100
   .fw-height-#{$value}
     height: #{$value}px
-
-  .fw-height-#{$value}\@xs
-    @media screen and (min-width: $extraSmall)
-      height: #{$value}px
-
-  .fw-height-#{$value}\@s
-    @media screen and (min-width: $small)
-      height: #{$value}px
-
-  .fw-height-#{$value}\@m
-    @media screen and (min-width: $medium)
-      height: #{$value}px
-
-  .fw-height-#{$value}\@l
-    @media screen and (min-width: $large)
-      height: #{$value}px
 
   .fw-max-height-#{$value}
     max-height: #{$value}px
 
-  .fw-max-height-#{$value}\@xs
-    @media screen and (min-width: $extraSmall)
-      max-height: #{$value}px
-
-  .fw-max-height-#{$value}\@s
-    @media screen and (min-width: $small)
-      max-height: #{$value}px
-
-  .fw-max-height-#{$value}\@m
-    @media screen and (min-width: $medium)
-      max-height: #{$value}px
-
-  .fw-max-height-#{$value}\@l
-    @media screen and (min-width: $large)
-      max-height: #{$value}px
-
   .fw-min-height-#{$value}
     min-height: #{$value}px
-
-  .fw-min-height-#{$value}\@xs
-    @media screen and (min-width: $extraSmall)
-      min-height: #{$value}px
-
-  .fw-min-height-#{$value}\@s
-    @media screen and (min-width: $small)
-      min-height: #{$value}px
-
-  .fw-min-height-#{$value}\@m
-    @media screen and (min-width: $medium)
-      min-height: #{$value}px
-
-  .fw-min-height-#{$value}\@l
-    @media screen and (min-width: $large)
-      min-height: #{$value}px

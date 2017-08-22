@@ -258,27 +258,55 @@ class YOURAPPNAME {
         app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
 
         (function() {
-            let map,
+            let map = document.getElementById('map'),
                 myIcon;
 
-            DG.then(function () {
+            if(map) {
+                DG.then(function () {
 
-                map = DG.map('map', {
-                    center: [59.850578, 30.303804],
-                    zoom: 16
+                    map = DG.map('map', {
+                        center: [59.850578, 30.303804],
+                        zoom: 16
+                    });
+
+                    map.scrollWheelZoom.disable();
+                    map.touchZoom.disable();
+
+                    DG.marker([59.850578, 30.303804]).addTo(map);
                 });
-
-                map.scrollWheelZoom.disable();
-                map.touchZoom.disable();
-
-                DG.marker([59.850578, 30.303804]).addTo(map);
-            });
+            }
         })();
     });
 
     app.appLoad('full', function (e) {
         // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+
+        const doc = document;
+
+        $(doc).on('click', '.b-toggle', function(e) {
+            const $bToggle = $(this),
+                $bToggleTrigger = e.target.closest('.b-toggle__trigger');
+
+            if($bToggleTrigger) {
+                e.preventDefault();
+
+                const $bToggleContent = $bToggle.find('.b-toggle__content');
+                const bToggleActiveClassName = 'b-toggle--active';
+
+                if($bToggle.hasClass(bToggleActiveClassName)) {
+                    $bToggleContent.stop().slideUp(200);
+                    setTimeout(function() {
+                        $bToggle.removeClass(bToggleActiveClassName);
+                    }, 200);
+                } else {
+                    $bToggleContent.stop().slideDown(300);
+                    setTimeout(function() {
+                        $bToggle.addClass(bToggleActiveClassName);
+                    }, 300);
+                }
+            }
+        });
     });
 
 })();

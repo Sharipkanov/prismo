@@ -1,17 +1,26 @@
 .button
   border-radius: 2px
-  border: none
   outline: none
   text-decoration: none
   cursor: pointer
+  border: 1px solid transparent
+
+  &.button-white
+    border-color: $colorDark
+    color: $colorDark
+    background-color: $colorWhite
   
   &.button-red
     color: $colorWhite
     background-color: $colorRed
     transition: all .2s ease-in-out
+    border-color: $colorRed
 
     &:hover
       background-color: $colorRed * .9
+
+  &.button-circle
+    border-radius: 50%
 
 
 .container
@@ -46,3 +55,32 @@
     border-width: 42px 72px 0 72px
     border-color: $colorRed transparent transparent transparent
     z-index: 1
+
+.b-toggle
+  .b-toggle__trigger
+    box-sizing: border-box
+    position: relative
+    padding-right: 20px
+
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 1px
+      width: 8px
+      height: 8px
+      border-top: 1px solid $colorDark
+      border-right: 1px solid $colorDark
+      transform: translateY(-50%) rotate(45deg)
+      transition: transform .2s ease-in-out
+
+  .b-toggle__content
+    display: none
+
+  &.b-toggle--active
+    .b-toggle__trigger
+      &::after
+        transform: translateY(-50%) rotate(135deg)
+
+    .b-toggle__content
+      display: block
