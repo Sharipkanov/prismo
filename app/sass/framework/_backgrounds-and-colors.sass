@@ -1,4 +1,4 @@
-@each $value in white_#{$colorWhite}, black_#{$colorBlack}, red_#{$colorRed}, dark_#{$colorDark}, blue_#{$colorBlue}
+@each $value in white_#{$colorWhite}, black_#{$colorBlack}, red_#{$colorRed}, dark_#{$colorDark}, blue_#{$colorBlue}, light_#{$colorLight}, lilac_#{$colorLilac}, yellow_#{$colorYellow}, cyan_#{$colorCyan}
   $values: str_split($value, '_')
   $color: nth($values, 2)
   $colorName: nth($values, 1)
@@ -8,6 +8,9 @@
 
   .fw-color-#{$colorName}
     color: $color
+
+.fw-color-inherit
+  color: inherit
 
 .fw-bg-cover
   background-size: cover

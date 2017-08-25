@@ -1,31 +1,33 @@
 {% extends "layouts/app.twig" %}
 
 {% block content %}
-    <div class="container">
-        <div class="fw-mt-30 fw-mb-50">
-            <p class="fw-font-rubic fw-fz-30 fw-margin-0 fw-color-dark">Корзина</p>
+    <section class="fw-mt-30 fw-mb-50">
+        <div class="container">
+            <p class="fw-font-rubik fw-fz-30 fw-margin-0 fw-color-dark">Корзина</p>
 
-            {% for i in 1..5 %}
-                <div class="fw-mt-40">
-                    {% include 'includes/articles/article-cart.twig' %}
-                </div>
-            {% endfor %}
+            <form action="">
+                {% for i in 1..5 %}
+                    <div class="fw-mt-40">
+                        {% include 'includes/articles/article-product-cart.twig' %}
+                    </div>
+                {% endfor %}
 
-            <p class="fw-font-rubic fw-fz-20 fw-mt-100 fw-mb-0">Выберите способ оплаты:</p>
-            <div class="fw-flex fw-flex-bottom fw-mt-30">
-                <div class="fw-flex-grow-1 fw-mr-20">
-                    <div class="fw-flex fw-flex-middle fw-width-1-1">
-                        <div class="fw-mr-30"><a href="#"><i class="icon icon-visa"></i></a></div>
-                        <div class="fw-mr-30"><a href="#"><i class="icon icon-master-cart"></i></a></div>
-                        <div class="fw-mr-30"><a href="#"><i class="icon icon-webmoney"></i></a></div>
-                        <div class="fw-mr-30"><a href="#"><i class="icon icon-qiwi-wallet"></i></a></div>
-                        <div><a href="#"><i class="icon icon-yandex-wallet"></i></a></div>
+                <p class="fw-font-rubik fw-fz-20 fw-mt-100 fw-mb-0">Выберите способ оплаты:</p>
+                <div class="fw-flex fw-flex-bottom fw-mt-30">
+                    <div class="fw-flex-grow-1 fw-mr-20">
+                        <div class="fw-flex fw-flex-middle fw-width-1-1">
+                            <div class="fw-mr-30"><a href="#"><i class="icon icon-visa"></i></a></div>
+                            <div class="fw-mr-30"><a href="#"><i class="icon icon-master-cart"></i></a></div>
+                            <div class="fw-mr-30"><a href="#"><i class="icon icon-webmoney"></i></a></div>
+                            <div class="fw-mr-30"><a href="#"><i class="icon icon-qiwi-wallet"></i></a></div>
+                            <div><a href="#"><i class="icon icon-yandex-wallet"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="fw-flex-shrink-no">
+                        <button type="submit" class="button button-red fw-border-box fw-pt-10 fw-pb-10 fw-pr-40 fw-pl-40"><span class="fw-fz-14 fw-font-rubik fw-font-medium fw-text-uppercase">Оплатить</span></button>
                     </div>
                 </div>
-                <div class="fw-flex-shrink-no">
-                    <button type="submit" class="button button-red fw-border-box fw-pt-10 fw-pb-10 fw-pr-40 fw-pl-40"><span class="fw-fz-14 fw-font-rubic fw-font-medium fw-text-uppercase">Оплатить</span></button>
-                </div>
-            </div>
+            </form>
         </div>
-    </div>
+    </section>
 {% endblock %}

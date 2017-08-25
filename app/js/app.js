@@ -328,5 +328,15 @@ var YOURAPPNAME = function () {
                 }
             }
         });
+
+        $('.js-text-ellipsis').each(function () {
+            var textElement = this,
+                wordArray = textElement.innerHTML.split(' ');
+
+            while (textElement.scrollHeight > textElement.offsetHeight) {
+                wordArray.pop();
+                textElement.innerHTML = wordArray.join(' ') + '...';
+            }
+        });
     });
 })();

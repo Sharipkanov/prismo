@@ -1,81 +1,99 @@
+body
+  @extend .fw-margin-0
+  @extend .fw-padding-0
+
 .button
-  border-radius: 2px
-  outline: none
-  text-decoration: none
-  cursor: pointer
-  border: 1px solid transparent
+  @extend .fw-border-radius-2
+  @extend .fw-text-underline-none
+  @extend .fw-border-width-1
+  @extend .fw-border-style-solid
+  @extend .fw-cursor-pointer
+  @extend .fw-flex-inline
+  @extend .fw-flex-middle
+  border-color: transparent
 
   &.button-white
-    border-color: $colorDark
-    color: $colorDark
-    background-color: $colorWhite
+    @extend .fw-border-color-dark
+    @extend .fw-color-dark
+    @extend .fw-bg-color-white
   
   &.button-red
-    color: $colorWhite
-    background-color: $colorRed
-    transition: all .2s ease-in-out
-    border-color: $colorRed
+    @extend .fw-color-white
+    @extend .fw-bg-color-red
+    @extend .fw-border-color-red
+    +transition()
 
     &:hover
       background-color: $colorRed * .9
 
   &.button-circle
-    border-radius: 50%
+    @extend .fw-border-radius-percent-50
 
+
+.app-wrapper
+  @extend .fw-width-1-1
+  @extend .fw-overflow-hidden
+  @extend .fw-flex
+  @extend .fw-flex-column
+  min-width: calc(#{$containerMaxWidth}px + 30px)
+  min-height: 100vh
 
 .container
-  padding: 0 15px
-  width: 1140px
-  margin: 0 auto
+  @extend .fw-pl-15
+  @extend .fw-pr-15
+  @extend .fw-width-1-1
+  @extend .fw-mr-auto
+  @extend .fw-ml-auto
+  max-width: #{$containerMaxWidth}px
 
 .header-shopping-cart
-  display: inline-flex
-  align-items: center
-  justify-content: center
-  width: 144px
-  height: 42px
-  position: relative
-  z-index: 1
+  @extend .fw-flex-inline
+  @extend .fw-flex-middle
+  @extend .fw-flex-center
+  @extend .fw-width-144
+  @extend .fw-height-42
+  @extend .fw-relative
+  @extend .fw-z-index-1
 
   > .icon
-    position: relative
-    z-index: 2
-    margin-top: -7px
-    margin-right: -7px
+    @extend .fw-relative
+    @extend .fw-z-index-2
+    @extend .fw-mt-inverse-7
+    @extend .fw-mr-inverse-7
   
   &::after
-    position: absolute
-    left: 0
-    top: 0
+    @extend .fw-absolute
+    @extend .fw-left-0
+    @extend .fw-top-0
+    @extend .fw-block
+    @extend .fw-width-0
+    @extend .fw-height-0
+    @extend .fw-border-style-solid
+    @extend .fw-z-index-1
     content: ''
-    display: block
-    width: 0
-    height: 0
-    border-style: solid
     border-width: 42px 72px 0 72px
     border-color: $colorRed transparent transparent transparent
-    z-index: 1
 
 .b-toggle
   .b-toggle__trigger
-    box-sizing: border-box
-    position: relative
-    padding-right: 20px
+    @extend .fw-border-box
+    @extend .fw-relative
+    @extend .fw-pr-20
 
     &::after
-      content: ''
-      position: absolute
-      top: 50%
-      right: 1px
-      width: 8px
-      height: 8px
+      @extend .fw-width-8
+      @extend .fw-height-8
+      @extend .fw-absolute
+      @extend .fw-top-percent-50
+      @extend .fw-right-1
       border-top: 1px solid $colorDark
       border-right: 1px solid $colorDark
       transform: translateY(-50%) rotate(45deg)
       transition: transform .2s ease-in-out
+      content: ''
 
   .b-toggle__content
-    display: none
+    @extend .fw-hidden
 
   &.b-toggle--active
     .b-toggle__trigger
@@ -83,4 +101,114 @@
         transform: translateY(-50%) rotate(135deg)
 
     .b-toggle__content
-      display: block
+      @extend .fw-block
+
+.lilac-triangle
+  @extend .fw-width-0
+  @extend .fw-height-0
+  @extend .fw-border-style-solid
+  border-width: 133px 0 133px 60px
+  border-color: transparent transparent transparent $colorLilac
+
+.article-product
+  .article-product__sale
+    @extend .fw-absolute
+    @extend .fw-center-top
+    @extend .fw-width-112
+    @extend .fw-height-34
+    @extend .fw-flex
+    @extend .fw-flex-middle
+    @extend .fw-flex-center
+
+    > span
+      @extend .fw-z-index-2
+      @extend .fw-relative
+      @extend .fw-mt-inverse-7
+      @extend .fw-font-rubik
+      @extend .fw-font-medium
+      @extend .fw-fz-15
+      @extend .fw-color-white
+
+    &::after
+      @extend .fw-absolute
+      @extend .fw-left-0
+      @extend .fw-top-0
+      @extend .fw-block
+      @extend .fw-height-0
+      @extend .fw-width-0
+      @extend .fw-border-style-solid
+      @extend .fw-z-index-1
+      content: ''
+      border-width: 34px 56px 0 56px
+      border-color: $colorRed transparent transparent transparent
+
+  .article-product__hit
+    @extend .fw-bg-color-yellow
+    @extend .fw-absolute
+    @extend .fw-left-0
+    @extend .fw-bottom-0
+    @extend .fw-color-white
+    @extend .fw-font-rubik
+    @extend .fw-height-30
+    @extend .fw-fz-13
+    @extend .fw-text-uppercase
+    @extend .fw-border-box
+    @extend .fw-pl-15
+    @extend .fw-pr-5
+    @extend .fw-font-medium
+    @extend .fw-flex
+    @extend .fw-flex-middle
+    @extend .fw-flex-center
+
+    &::after
+      @extend .fw-absolute
+      @extend .fw-left-percent-100
+      @extend .fw-top-0
+      @extend .fw-width-0
+      @extend .fw-height-0
+      @extend .fw-border-style-solid
+      content: ''
+      border-width: 30px 0 0 15px
+      border-color: transparent transparent transparent $colorYellow
+
+.nav-product
+  li
+    @extend .fw-color-dark
+    &.active
+      @extend .fw-color-red
+
+    > a
+      +transition()
+
+      &:hover
+        @extend .fw-color-red
+
+.nav-product-info,
+.gallery-product
+  li
+    @extend .fw-hidden
+
+    &.active
+      @extend .fw-block
+
+.gallery-product-switcher
+  li
+    > *
+      position: relative
+
+      &::after
+        @extend .fw-absolute
+        @extend .fw-top-0
+        @extend .fw-left-0
+        @extend .fw-width-1-1
+        @extend .fw-height-1-1
+        @extend .fw-border-style-solid
+        @extend .fw-border-color-blue
+        @extend .fw-border-box
+        @extend .fw-border-width-2
+        @extend .fw-hidden
+        background-color: rgba(255,255,255,.2)
+        content: ''
+
+    &.active > *::after
+      @extend .fw-block

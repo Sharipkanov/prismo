@@ -75,7 +75,7 @@ class YOURAPPNAME {
             for (let i = 0; i < switchers.length; i++) {
                 const switcher = switchers[i],
                     switcherOptions = _self.options(switcher.dataset["switcher"]),
-                    switcherElems = switcher.children,
+                    switcherElems = switcher.children, 
                     switcherTargets = _self.doc.querySelector('[data-switcher-target="' + switcherOptions.target + '"]').children,
                     switchersActive = [];
 
@@ -307,6 +307,16 @@ class YOURAPPNAME {
                 }
             }
         });
+
+        $('.js-text-ellipsis').each(function() {
+            const textElement = this,
+                wordArray = textElement.innerHTML.split(' ');
+
+            while(textElement.scrollHeight > textElement.offsetHeight) {
+                wordArray.pop();
+                textElement.innerHTML = wordArray.join(' ')  + '...';
+            }
+        })
     });
 
 })();

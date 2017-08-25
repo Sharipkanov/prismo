@@ -1,0 +1,13 @@
+<section>
+    <div class="container">
+        <p class="fw-font-rubik fw-fz-35 fw-text-uppercase fw-color-dark fw-font-medium fw-margin-0 fw-text-center">Похожие акции</p>
+
+        <div class="fw-grid fw-grid-15 fw-mt-40">
+            {% for i in 1..4 %}
+                <div class="fw-width-1-4">
+                    {% include '../articles/article-product.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,4 +1,4 @@
-@each $value in 12, 13, 14, 15, 16, 20, 25, 30, 35, 42, 50
+@each $value in 12, 13, 14, 15, 16, 20, 25, 30, 35, 40, 42, 50
   .fw-fz-#{$value}
     font-size: #{$value}px
 
@@ -6,7 +6,7 @@
   .fw-line-height-#{$value}
     line-height: unquote(str_replace($value, '-', '.'))
 
-.fw-font-rubic
+.fw-font-rubik
   font-family: 'Rubik', sans-serif
 
 .fw-font-normal
