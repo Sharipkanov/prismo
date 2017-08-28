@@ -1,0 +1,52 @@
+<article class="fw-flex fw-mb-50">
+    <div class="fw-flex-shrink-no fw-mr-10">
+        <div class="fw-width-70 fw-height-70 fw-border-radius-percent-50 fw-overflow-hidden">
+            <img src="http://placehold.it/70x70" alt="" class="fw-img-cover">
+        </div>
+    </div>
+    <div class="fw-width-144 fw-flex-shrink-no fw-mr-10 fw-mt-5">
+        <div class="fw-width-1-1"><p class="fw-font-rubik fw-fz-16 fw-margin-0 fw-color-dark fw-text-overflow">Алиса Ковалева</p></div>
+        <p class="fw-font-rubik fw-fz-13 fw-color-dark fw-mt-5 fw-mb-5">20,05,2017</p>
+        {% if stars %}
+            <div class="fw-relative fw-flex-inline fw-flex-center fw-flex-middle">
+                {% for i in 1..5 %}
+                    <div><i class="icon icon-star-empty"></i></div>
+                {% endfor %}
+                <div class="fw-absolute fw-left-0 fw-top-0 fw-z-index-1 fw-width-0 fw-overflow-hidden" style="width: 75%;">
+                    <div class="fw-flex fw-flex-center fw-flex-middle fw-width-110">
+                        {% for i in 1..5 %}
+                            <div><i class="icon icon-star-filled"></i></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <div class="fw-flex-grow-1 fw-mt-4">
+        <div class="fw-width-1-1">
+            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-margin-0 fw-color-dark fw-line-height-1-5">Поехали в будни.народу мало,что оказалось хорошо.посетили бассейн и хамам. Кормили едой комплексной,порции большие, сытно и разнообразно.Территория красивая.</p>
+            <div class="fw-mt-10">
+                <p class="fw-flex fw-flex-middle fw-font-rubik fw-fz-13 fw-color-dark">
+                    <a href="#" class="fw-color-dark">Ответить</a>
+                    <span class="fw-ml-15 fw-mr-15">|</span>
+                    <span class="fw-mr-5">Отзыв помог?</span>
+                    <span class="fw-color-yellow"><a href="#" class="fw-color-yellow fw-text-underline-hover">Да</a> 5</span>
+                    <span class="fw-ml-5 fw-color-red"><a href="#" class="fw-color-red fw-text-underline-hover">Нет</a> 1</span>
+                </p>
+            </div>
+            <div>
+                <div class="fw-flex fw-mt-20">
+                    <div class="fw-flex-shrink-no fw-mr-30 fw-mt-5">
+                        <p class="fw-font-rubik fw-fz-16 fw-margin-0 fw-color-dark">Алиса Ковалева</p>
+                        <p class="fw-font-rubik fw-fz-13 fw-color-dark fw-mt-5 fw-mb-5">20,05,2017</p>
+                    </div>
+                    <div class="fw-flex-grow-1 fw-mt-4">
+                        <div class="fw-width-1-1">
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-margin-0 fw-color-dark fw-line-height-1-5">Поехали в будни.народу мало,что оказалось хорошо.посетили бассейн и хамам. Кормили едой комплексной,порции большие, сытно и разнообразно.Территория красивая.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,7 +1,7 @@
 {% extends "layouts/app.twig" %}
 
 {% block content %}
-    <section class="fw-mb-50 fw-mt-30">
+    <section class="fw-mb-100 fw-mt-30">
         <div class="container">
             <div class="fw-mb-30">
                 <p class="fw-font-rubik fw-fz-30 fw-margin-0 fw-color-dark">Билеты в кино CINEMAX от 1 000 тг.</p>
@@ -21,7 +21,7 @@
             <div class="fw-flex">
                 <div class="fw-flex-grow-1">
                     <div class="fw-width-1-1">
-                        <ul class="gallery-product fw-list-unstyled fw-margin-0 fw-padding-0" data-switcher-target="gallery-product">
+                        <ul class="gallery-product" data-switcher-target="gallery-product">
                             {% for i in 0..4 %}
                                 <li class="{% if (i == 0) %}active{% endif %}">
                                     <div class="fw-width-1-1">
@@ -33,7 +33,7 @@
                             {% endfor %}
                         </ul>
 
-                        <ul class="gallery-product-switcher fw-grid fw-grid-5 fw-list-unstyled fw-mt-5 fw-mb-0 fw-padding-0" data-switcher="{target: 'gallery-product'}">
+                        <ul class="gallery-product-switcher" data-switcher="{target: 'gallery-product'}">
                             {% for i in 0..4 %}
                                 <li class="fw-width-1-5 {% if (i == 0) %}active{% endif %}">
                                     <a href="#" class="fw-width-1-1 fw-block">
@@ -53,6 +53,45 @@
                             <p class="fw-font-rubik fw-font-light fw-fz-14 fw-color-white fw-text-center fw-margin-0">экономия от 600 тг.</p>
                             <div class="fw-text-center fw-mt-20">
                                 <a href="#" class="button button-red fw-border-box fw-pt-15 fw-pb-15 fw-pr-40 fw-pl-40"><span class="fw-fz-14 fw-font-rubik fw-font-medium fw-text-uppercase">Купить</span></a>
+                            </div>
+                        </div>
+                        <p class="fw-font-rubik fw-color-dark fw-text-center fw-mt-20 fw-mb-10">21 отзыв</p>
+                        <div class="fw-text-center">
+                            <div class="fw-relative fw-flex-inline fw-flex-center fw-flex-middle">
+                                {% for i in 1..5 %}
+                                    <div><i class="icon icon-star-empty"></i></div>
+                                {% endfor %}
+                                <div class="fw-absolute fw-left-0 fw-top-0 fw-z-index-1 fw-width-0 fw-overflow-hidden" style="width: 75%;">
+                                    <div class="fw-flex fw-flex-center fw-flex-middle fw-width-110">
+                                        {% for i in 1..5 %}
+                                            <div><i class="icon icon-star-filled"></i></div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="fw-font-rubik fw-color-dark fw-text-center fw-mt-20 fw-mb-10">До конца акции осталось:</p>
+                        <div id="countdown" class="fw-text-center fw-hidden" data-countdown-until="Sep, 2017 15:21:30">
+                            <div class="fw-flex-inline">
+                                <div class="fw-flex-shrink-no fw-text-center">
+                                    <p class="fw-font-rubik fw-font-medium fw-margin-0 fw-fz-30 fw-color-dark" data-countdown-days></p>
+                                    <small class="fw-font-rubik fw-font-medium fw-block fw-color-dark fw-fz-11">дней</small>
+                                </div>
+                                <div><p class="fw-mt-0 fw-mb-0 fw-mr-5 fw-ml-5 fw-fz-30 fw-font-rubik fw-font-medium">:</p></div>
+                                <div class="fw-flex-shrink-no fw-text-center">
+                                    <p class="fw-font-rubik fw-font-medium fw-margin-0 fw-fz-30 fw-color-dark" data-countdown-hours></p>
+                                    <small class="fw-font-rubik fw-font-medium fw-block fw-color-dark fw-fz-11">часов</small>
+                                </div>
+                                <div><p class="fw-mt-0 fw-mb-0 fw-mr-5 fw-ml-5 fw-fz-30 fw-font-rubik fw-font-medium">:</p></div>
+                                <div class="fw-flex-shrink-no fw-text-center">
+                                    <p class="fw-font-rubik fw-font-medium fw-margin-0 fw-fz-30 fw-color-dark" data-countdown-minutes></p>
+                                    <small class="fw-font-rubik fw-font-medium fw-block fw-color-dark fw-fz-11">минут</small>
+                                </div>
+                                <div><p class="fw-mt-0 fw-mb-0 fw-mr-5 fw-ml-5 fw-fz-30 fw-font-rubik fw-font-medium">:</p></div>
+                                <div class="fw-flex-shrink-no fw-text-center">
+                                    <p class="fw-font-rubik fw-font-medium fw-margin-0 fw-fz-30 fw-color-dark" data-countdown-seconds></p>
+                                    <small class="fw-font-rubik fw-font-medium fw-block fw-color-dark fw-fz-11">секунд</small>
+                                </div>
                             </div>
                         </div>
                         <p class="fw-font-rubik fw-color-dark fw-text-center fw-mt-40 fw-mb-10">Поделиться:</p>
@@ -75,56 +114,147 @@
             </div>
 
             <div class="fw-mt-50">
-                <ul class="nav-product fw-list-unstyled fw-margin-0 fw-padding-0 fw-flex fw-flex-middle fw-flex-space-between fw-color-dark" data-switcher="{target: 'nav-product-info'}">
-                    <li class="active"><a href="#" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Информация</a></li>
+                <ul class="nav-product" data-switcher="{target: 'nav-product-info'}">
+                    <li><a href="#" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Информация</a></li>
                     <li><a href="#" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Особенности</a></li>
-                    <li><a href="#" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Контакты</a></li>
+                    <li><a href="#" id="map-reinit-trigger" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Контакты</a></li>
                     <li><a href="#" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Отзывы 21</a></li>
-                    <li><a href="#" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Вопросы 5</a></li>
-                    <li><a href="#" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Как воспользоваться акцией?</a></li>
+                    <li class="active"><a href="#" class="fw-font-rubik fw-font-medium fw-text-underline-none fw-color-inherit">Вопросы 5</a></li>
                 </ul>
 
-                <ul class="nav-product-info fw-list-unstyled fw-margin-0 fw-padding-0 fw-mt-50" data-switcher-target="nav-product-info">
-                    <li class="active">
-                        <div class="fw-flex">
-                            <div class="fw-flex-grow-1">
-                                <div class="fw-width-1-1">
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Акция действительна в будние и выходные дни, кроме понедельника.</p>
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Акция действует на все сеансы, кроме понедельника, VIP-зала и Business-зал​а.</p>
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Сертификат предоставляет возможность приобрести билеты на один сеанс.</p>
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Если Вы приобрели сертификат на 2 или более человек, все билеты действуют на один общий сеанс.</p>
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— После активации сертификатов билеты возврату и обмену не подлежат.</p>
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Перед тем, как получить услугу, обязательно сообщайте нашему партнеру о том, что Вы обратились по акции Logo.me.</p>
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Вы можете приобрести неограниченное количество сертификатов как для себя, так и в подарок.</p>
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Сертификат распечатывать необязательно, достаточно сообщить его номер и SC-код.</p>
-                                    <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Сертификат действителен до 6 сентября 2017 г. (включительно).</p>
+                <div class="fw-mt-30">
+                    <ul class="nav-product-info" data-switcher-target="nav-product-info">
+                        <li class="active">
+                            <div class="fw-flex">
+                                <div class="fw-flex-grow-1">
+                                    <div class="fw-width-1-1">
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Акция действительна в будние и выходные дни, кроме понедельника.</p>
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Акция действует на все сеансы, кроме понедельника, VIP-зала и Business-зал​а.</p>
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Сертификат предоставляет возможность приобрести билеты на один сеанс.</p>
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Если Вы приобрели сертификат на 2 или более человек, все билеты действуют на один общий сеанс.</p>
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— После активации сертификатов билеты возврату и обмену не подлежат.</p>
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Перед тем, как получить услугу, обязательно сообщайте нашему партнеру о том, что Вы обратились по акции Logo.me.</p>
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Вы можете приобрести неограниченное количество сертификатов как для себя, так и в подарок.</p>
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Сертификат распечатывать необязательно, достаточно сообщить его номер и SC-код.</p>
+                                        <p class="fw-font-rubik fw-fz-15 fw-color-dark fw-margin-0 fw-line-height-2 fw-font-light">— Сертификат действителен до 6 сентября 2017 г. (включительно).</p>
+                                    </div>
+                                    <p class="fw-font-rubik fw-font-medium fw-fz-15 fw-mt-30 fw-mb-15 fw-color-dark">Справки по телефону <a href="tel:+7 (727)2220077" class="fw-color-dark fw-text-underline-hover">+7 (727) 222 00 77</a> (касса).</p>
+                                    <div class="fw-flex fw-flex-middle">
+                                        <div class="fw-flex-shrink-no fw-mr-10">
+                                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-margin-0">Способы оплаты:</p>
+                                        </div>
+                                        <div class="fw-flex-grow-1">
+                                            <i class="icon icon-payment-types"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="fw-flex-shrink-no fw-ml-40">
-                                <div class="fw-width-325">
-                                    <p class="fw-font-rubik fw-font-medium fw-fz-16 fw-color-dark fw-margin-0 fw-text-center">Виды сертификатов:</p> 
-                                    {% for i in 1..3 %}
-                                        <p class="fw-font-rubik fw-font-light fw-fz-16 fw-color-dark fw-mt-20 fw-mb-0">
+                                <div class="fw-flex-shrink-no fw-ml-40">
+                                    <div class="fw-width-325">
+                                        <p class="fw-font-rubik fw-font-medium fw-fz-16 fw-color-dark fw-margin-0 fw-text-center">Виды сертификатов:</p>
+                                        {% for i in 1..3 %}
+                                            <p class="fw-font-rubik fw-font-light fw-fz-16 fw-color-dark fw-mt-20 fw-mb-0">
                                             <span class="fw-flex fw-flex-bottom fw-flex-center">
                                                <span>1 билет</span>
                                                <span class="fw-text-line-through fw-mr-5 fw-ml-5">{{ 1800 * i }} тг.</span>
                                                <span class="fw-font-medium">{{ 1200 * i }} тг.</span>
                                             </span>
-                                            <span class="fw-block fw-text-center fw-mt-10">
+                                                <span class="fw-block fw-text-center fw-mt-10">
                                                 <a href="#" class="button button-red fw-border-box fw-pt-10 fw-pb-10 fw-pr-40 fw-pl-40"><span class="fw-fz-13 fw-font-rubik fw-font-medium fw-text-uppercase">Купить</span></a>
                                             </span>
-                                        </p>
-                                    {% endfor %}
+                                            </p>
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                        </li>
+                        <li>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">Воспользоваться взятым купоном можно прямо сейчас и по 28 Августа 2017 года включительно.</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">Для того, чтобы вас обслужили максимально качественно, при заказе услуги или товара обязательно сообщите, что вы обращаетесь по купону Boombate.</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">Купон действует только в случае предварительной записи по телефонам, указанным на странице акции или в купоне.</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">Купон дает право скидки до 54% на проживание на базе отдыха «Оазис в лесу». Вы заплатите:</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">Проживание без посещение SPA-центра:</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-mt-50 fw-mb-0">2 дня/1 ночь с завтраками:</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">1650 р. вместо 3300 р. за двоих в номере «Стандарт Twin/DBL»;</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">2200 р. вместо 4000 р. за двоих в номере «Полулюкс»;</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">2750 р. вместо 5500 р. за двоих в номере «Люкс»;</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">5500 р. вместо 11000 р. за двоих в номере «Люкс свадебный»;</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">3300 р. вместо 6600 р. за четверых в номере «Семейный».</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">3 дня/2 ночи с питанием «Полный пансион»:</p>
+                            <p class="fw-font-rubik fw-font-light fw-fz-15 fw-color-dark fw-line-height-2 fw-margin-0">6000 р. вместо 12000 р. за двоих в номере «Стандарт Twin/DBL»;</p>
+                        </li>
+                        <li>
+                            <div class="fw-grid fw-grid-35">
+                                <div class="fw-width-1-2">
+                                    <p class="fw-font-rubik fw-fz-20 fw-margin-0">Контакты</p>
+                                    <div class="fw-mt-15">
+                                        <p class="fw-font-rubik fw-font-light fw-fz-14 fw-color-dark fw-line-height-2 fw-margin-0">г. Алматы, ул. Макатаева, 117А (уг. ул. Масанчи), БЦ Лотос, блок А, 3 этаж, кабинет 321 (офис Chocolife.me)</p>
+                                        <p class="fw-font-rubik fw-font-light fw-fz-14 fw-color-dark fw-line-height-2 fw-margin-0">Телефон: <a href="tel:+7(727)346-85-88" class="fw-color-dark fw-text-underline-hover">+7 (727) 346-85-88</a> (круглосуточно и без выходных)</p>
+                                    </div>
+                                    <p class="fw-font-rubik fw-fz-20 fw-mt-30 fw-mb-0">PR-Менеджер</p>
+                                    <div class="fw-mt-15">
+                                        <p class="fw-font-rubik fw-font-light fw-fz-14 fw-color-dark fw-line-height-2 fw-margin-0">Вопросы информационной поддержки событий, участия во внешних
+                                            мероприятиях спикеров и работы со СМИ:
+                                        </p>
+                                        <p class="fw-font-rubik fw-font-light fw-fz-14 fw-color-dark fw-line-height-2 fw-margin-0">Немцова Анастасия <a href="mailto:nemtsova.a@chocolife.kz" class="fw-color-dark fw-text-underline-hover">nemtsova.a@chocolife.kz</a></p>
+                                    </div>
+                                    <p class="fw-font-rubik fw-fz-20 fw-mt-30 fw-mb-0">Хотите запустить LOGO в Вашем городе?</p>
+                                    <div class="fw-mt-15">
+                                        <p class="fw-font-rubik fw-font-light fw-fz-14 fw-color-dark fw-line-height-2 fw-margin-0">Свяжитесь с Ким Геннадием <a href="mailto:gennady@chocolife.me" class="fw-color-dark fw-text-underline-hover">gennady@chocolife.me</a></p>
+                                    </div>
+                                </div>
+                                <div class="fw-width-1-2">
+                                    <div class="fw-width-1-1 fw-box-proportional-70">
+                                        <div id="map" data-latitude="49.967589" data-longitude="82.614257"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="reviews-container">
+                                {% for i in 1..5 %}
+                                    <div>
+                                        {% include 'includes/articles/article-review.twig' with {stars: true} %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="fw-text-center">
+                                <div><p class="fw-font-rubik fw-fz-11 fw-text-uppercase">Показано <span class="fw-fz-14">5</span> отзывы из <span class="fw-fz-14">21</span></p></div>
+                                <a href="#" class="button button-red fw-border-box fw-pt-10 fw-pb-10 fw-pr-40 fw-pl-40"><span class="fw-fz-13 fw-font-rubik fw-font-medium fw-text-uppercase">показать еще отзывы</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="reviews-container">
+                                {% for i in 1..5 %}
+                                    <div>
+                                        {% include 'includes/articles/article-review.twig' with {stars: false} %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <hr>
+                            <form action="">
+                                <div class="fw-flex">
+                                    <div class="fw-flex-shrink-no fw-mr-10">
+                                        <div class="fw-width-70 fw-height-70 fw-border-radius-percent-50 fw-overflow-hidden">
+                                            <img src="http://placehold.it/70x70" alt="" class="fw-img-cover">
+                                        </div>
+                                    </div>
+                                    <div class="fw-width-144 fw-flex-shrink-no fw-mr-10 fw-mt-5">
+                                        <div class="fw-width-1-1"><p class="fw-font-rubik fw-fz-16 fw-margin-0 fw-color-dark fw-text-overflow">Алиса Ковалева</p></div>
+                                        <p class="fw-font-rubik fw-fz-13 fw-color-dark fw-mt-5 fw-mb-5">lorem@gmail.com</p>
+                                    </div>
+                                    <div class="fw-flex-grow-1">
+                                        <div class="fw-width-1-1">
+                                            <textarea name="" rows="10" class="fw-width-1-1 fw-border-box fw-mb-20 fw-padding-5 fw-font-rubik fw-font-light fw-fz-15 fw-color-dark" placeholder="Ваш вопрос"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fw-text-right">
+                                    <a href="#" class="button button-red fw-border-box fw-pt-10 fw-pb-10 fw-pr-40 fw-pl-40"><span class="fw-fz-13 fw-font-rubik fw-font-medium fw-text-uppercase">Задать вопрос</span></a>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

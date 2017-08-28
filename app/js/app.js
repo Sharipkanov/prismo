@@ -259,6 +259,42 @@ var YOURAPPNAME = function () {
 
             return plugin;
         }
+    }, {
+        key: 'countdown',
+        value: function countdown(elementId, callback) {
+            var countdown = this.doc.getElementById(elementId);
+            var countDownInterval = void 0;
+
+            var setCounterValues = function setCounterValues() {
+                var countdownUntil = countdown.dataset.countdownUntil,
+                    countdownDays = countdown.querySelector('[data-countdown-days]'),
+                    countdownHours = countdown.querySelector('[data-countdown-hours]'),
+                    countdownMinutes = countdown.querySelector('[data-countdown-minutes]'),
+                    countdownSeconds = countdown.querySelector('[data-countdown-seconds]');
+
+                var now = new Date().getTime(),
+                    distance = new Date(countdownUntil).getTime() - now,
+                    days = Math.floor(distance / (1000 * 60 * 60 * 24)),
+                    hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)),
+                    minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60)),
+                    seconds = Math.floor(distance % (1000 * 60) / 1000);
+
+                if (days <= -1) clearInterval(countDownInterval);
+
+                if (countdownDays !== null) countdownDays.innerHTML = days <= -1 ? 0 : days;
+                if (countdownHours !== null) countdownHours.innerHTML = days <= -1 ? 0 : hours;
+                if (countdownMinutes !== null) countdownMinutes.innerHTML = days <= -1 ? 0 : minutes;
+                if (countdownSeconds !== null) countdownSeconds.innerHTML = days <= -1 ? 0 : seconds;
+            };
+
+            if (countdown !== null) {
+
+                setCounterValues();
+                if (callback) callback(countdown);
+
+                countDownInterval = setInterval(setCounterValues, 1000);
+            }
+        }
     }]);
 
     return YOURAPPNAME;
@@ -276,27 +312,31 @@ var YOURAPPNAME = function () {
         // DOM is loaded! Paste your app code here (Pure JS code).
         // Do not use jQuery here cause external libs do not loads here...
 
-        app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
+        app.initSwitcher(); // data-switcher="{target:'anything'}" , data-switcher-target="anything"
+        app.countdown('countdown', function (countdown) {
+            countdown.classList.remove('fw-hidden');
+        });
 
-        (function () {
-            var map = document.getElementById('map'),
-                myIcon = void 0;
+        var map = document.getElementById('map'),
+            myIcon = void 0;
 
-            if (map) {
-                DG.then(function () {
+        if (map) {
+            var mapLatitude = map.dataset.latitude,
+                mapLongitude = map.dataset.longitude;
 
-                    map = DG.map('map', {
-                        center: [59.850578, 30.303804],
-                        zoom: 16
-                    });
+            var doubleGisMap = DG.then(function () {
 
-                    map.scrollWheelZoom.disable();
-                    map.touchZoom.disable();
-
-                    DG.marker([59.850578, 30.303804]).addTo(map);
+                map = DG.map('map', {
+                    center: [mapLatitude, mapLongitude],
+                    zoom: 16
                 });
-            }
-        })();
+
+                map.scrollWheelZoom.disable();
+                map.touchZoom.disable();
+
+                DG.marker([mapLatitude, mapLongitude]).addTo(map);
+            });
+        }
     });
 
     app.appLoad('full', function (e) {

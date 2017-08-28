@@ -2,6 +2,14 @@ body
   @extend .fw-margin-0
   @extend .fw-padding-0
 
+hr
+  @extend .fw-width-1-1
+  @extend .fw-height-1
+  border: none
+  background-color: #ddd
+  @extend .fw-mt-20
+  @extend .fw-mb-20
+
 .button
   @extend .fw-border-radius-2
   @extend .fw-text-underline-none
@@ -172,12 +180,32 @@ body
       border-color: transparent transparent transparent $colorYellow
 
 .nav-product
+  @extend .fw-list-unstyled
+  @extend .fw-mb-0
+  @extend .fw-padding-0
+  @extend .fw-flex
+  @extend .fw-flex-middle
+  @extend .fw-flex-space-between
+  @extend .fw-color-dark
+
   li
+    @extend .fw-flex-grow-1
     @extend .fw-color-dark
+    @extend .fw-border-style-solid
+    @extend .fw-border-width-1
+    border-color: transparent
+    border-bottom-color: #ddd
+
     &.active
       @extend .fw-color-red
+      border-color: #ddd
+      border-bottom-color: transparent
 
     > a
+      @extend .fw-pt-20
+      @extend .fw-pb-20
+      @extend .fw-text-center
+      @extend .fw-block
       +transition()
 
       &:hover
@@ -185,6 +213,10 @@ body
 
 .nav-product-info,
 .gallery-product
+  @extend .fw-list-unstyled
+  @extend .fw-margin-0
+  @extend .fw-padding-0
+
   li
     @extend .fw-hidden
 
@@ -192,6 +224,13 @@ body
       @extend .fw-block
 
 .gallery-product-switcher
+  @extend .fw-grid
+  @extend .fw-grid-5
+  @extend .fw-list-unstyled
+  @extend .fw-mt-5
+  @extend .fw-mb-0
+  @extend .fw-padding-0
+
   li
     > *
       @extend .fw-relative
@@ -212,3 +251,24 @@ body
 
     &.active > *::after
       @extend .fw-block
+
+.protection-toggle
+  .b-toggle__trigger
+    @extend .fw-font-rubik
+    @extend .fw-font-light
+    @extend .fw-block
+    @extend .fw-fz-13
+    @extend .fw-color-white
+    @extend .fw-text-uppercase
+    @extend .fw-text-underline-none
+
+    &::after
+      border-top-color: $colorWhite
+      border-right-color: $colorWhite
+      right: 3px
+
+  &.b-toggle--active
+    .b-toggle__trigger::after
+      margin-top: -2px
+      transform: translateY(-50%) rotate(135deg)
+
